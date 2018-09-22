@@ -16,7 +16,7 @@ def generate_directories(path):
 	if os.path.isdir(path):
 		yield path
 	while True:
-		if os.path.ismount(path.decode('cp936')):
+		if os.path.ismount(path.decode('cp936','ignore')):
 			break
 		old_path = path
 		path = os.path.dirname(path)
